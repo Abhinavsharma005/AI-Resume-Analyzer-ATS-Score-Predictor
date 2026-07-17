@@ -1,0 +1,38 @@
+{
+  "required_sections": [
+    "education",
+    "experience",
+    "skills",
+    "projects"
+  ],
+  "optional_but_recommended_sections": [
+    "summary",
+    "certifications",
+    "achievements",
+    "contact"
+  ],
+  "weak_verbs": [
+    "helped", "worked on", "responsible for", "involved in", "assisted",
+    "participated", "did", "handled", "was part of"
+  ],
+  "strong_verbs": [
+    "led", "architected", "engineered", "built", "designed", "implemented",
+    "optimized", "launched", "drove", "spearheaded", "automated", "developed",
+    "delivered", "reduced", "increased", "created", "deployed", "scaled"
+  ],
+  "passive_voice_patterns": [
+    "was responsible for", "was involved in", "was tasked with", "were assigned"
+  ],
+  "formatting_checks": {
+    "max_recommended_words": 1000,
+    "min_recommended_words": 150,
+    "max_recommended_pages": 2,
+    "bullet_point_required": true,
+    "email_required": true,
+    "phone_required": true
+  },
+  "quantification_indicators": [
+    "%", "percent", "increased", "decreased", "reduced", "improved", "grew",
+    "$", "million", "thousand", "users", "revenue", "efficiency"
+  ]
+}

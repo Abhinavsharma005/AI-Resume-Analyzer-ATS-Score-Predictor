@@ -1,0 +1,7 @@
+Job Title: Frontend Developer
+
+Looking for a Frontend Developer proficient in React, JavaScript, TypeScript,
+HTML, and CSS. Experience with Next.js, TailwindCSS, and REST API integration
+is required. Familiarity with Git, responsive design, and state management
+(Redux) is a plus. Knowledge of testing frameworks and CI/CD pipelines is
+beneficial.

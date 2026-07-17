@@ -1,0 +1,6 @@
+Job Title: Android Developer
+
+Seeking an Android Developer skilled in Kotlin, Java, and Android Studio.
+Experience with Firebase, Jetpack Compose, MVVM architecture, Retrofit, and
+Room Database is required. Understanding of Material Design guidelines and
+Gradle build system preferred.

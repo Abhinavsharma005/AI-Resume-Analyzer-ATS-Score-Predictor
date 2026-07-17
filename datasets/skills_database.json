@@ -1,0 +1,50 @@
+{
+  "AI/ML": [
+    "python", "machine learning", "deep learning", "tensorflow", "keras", "pytorch",
+    "scikit-learn", "numpy", "pandas", "nlp", "computer vision", "opencv",
+    "neural networks", "cnn", "rnn", "lstm", "gru", "transformers", "data science",
+    "feature engineering", "model deployment", "mlops", "xgboost", "random forest",
+    "regression", "classification", "clustering", "hyperparameter tuning"
+  ],
+  "Web Development": [
+    "html", "css", "javascript", "typescript", "react", "next.js", "node.js",
+    "express", "mongodb", "postgresql", "mysql", "redux", "tailwindcss", "rest api",
+    "graphql", "django", "flask", "php", "laravel", "vue.js", "angular", "git",
+    "docker", "ci/cd", "webpack", "sass"
+  ],
+  "Android Development": [
+    "kotlin", "java", "android studio", "firebase", "jetpack compose", "xml",
+    "mvvm", "retrofit", "room database", "android sdk", "gradle", "material design"
+  ],
+  "Data Analytics": [
+    "sql", "excel", "power bi", "tableau", "data visualization", "statistics",
+    "python", "pandas", "numpy", "matplotlib", "seaborn", "etl", "data warehousing",
+    "google analytics", "a/b testing"
+  ],
+  "Cloud/DevOps": [
+    "aws", "azure", "gcp", "docker", "kubernetes", "jenkins", "terraform",
+    "ansible", "linux", "ci/cd", "nginx", "microservices", "cloudformation",
+    "monitoring", "prometheus", "grafana"
+  ],
+  "Cybersecurity": [
+    "network security", "penetration testing", "ethical hacking", "siem",
+    "firewalls", "cryptography", "vulnerability assessment", "owasp",
+    "incident response", "wireshark", "metasploit", "iso 27001"
+  ],
+  "HR": [
+    "recruitment", "onboarding", "employee relations", "performance management",
+    "hr policies", "training and development", "conflict resolution",
+    "compensation and benefits", "hris", "talent acquisition", "labor law",
+    "compliance", "payroll"
+  ],
+  "Sales": [
+    "lead generation", "negotiation", "crm", "sales strategy",
+    "account management", "cold calling", "salesforce", "client relationship",
+    "business development", "closing deals", "sales forecasting", "upselling"
+  ],
+  "Finance": [
+    "financial modeling", "budgeting", "forecasting", "accounts payable",
+    "accounts receivable", "gaap", "auditing", "financial reporting",
+    "excel", "quickbooks", "risk analysis", "reconciliation", "taxation"
+  ]
+}

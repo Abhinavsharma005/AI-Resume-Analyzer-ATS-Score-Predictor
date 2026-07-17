@@ -1,0 +1,32 @@
+# Virtual Environment
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Environment Variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Streamlit Secrets
+.streamlit/secrets.toml
+
+# Model Files
+models/*.keras
+models/*.h5
+models/checkpoints/
+
+# Temporary Uploads
+streamlit_app/uploads/
+streamlit_app/temp/
+
+# Generated Reports
+reports/
+
+# OS Files
+.DS_Store
+Thumbs.db

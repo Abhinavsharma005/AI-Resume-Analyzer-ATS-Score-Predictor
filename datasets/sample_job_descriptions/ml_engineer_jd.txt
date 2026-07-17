@@ -1,0 +1,9 @@
+Job Title: Machine Learning Engineer
+
+We are looking for a Machine Learning Engineer with strong experience in Python,
+TensorFlow or PyTorch, and deep learning. Responsibilities include building and
+deploying ML models, working with pandas and numpy for data processing, and
+collaborating with cross-functional teams. Experience with NLP, computer vision,
+scikit-learn, and MLOps practices is a plus. Familiarity with Docker and cloud
+platforms (AWS/GCP) is desirable. Strong understanding of neural networks, CNNs,
+RNNs, and model evaluation metrics required.
