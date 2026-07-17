@@ -16,8 +16,7 @@ __pycache__/
 .streamlit/secrets.toml
 
 # Model Files
-models/*.keras
-models/*.h5
+
 models/checkpoints/
 
 # Temporary Uploads
