@@ -5,11 +5,6 @@ An end-to-end Deep Learning + rule-based system that analyzes resumes using a
 fully separate, explainable **ATS Engine** for skill matching, quality
 checks, and improvement recommendations.
 
-> **Design constraint:** This project intentionally uses **only GRUs** to
-> demonstrate recurrent Deep Learning architectures. No BERT, RoBERTa,
-> Sentence-Transformers, Hugging Face models, or LLM APIs are used anywhere
-> in the pipeline.
-
 ---
 
 ## 🧠 What the GRU does (and doesn't do)
@@ -302,12 +297,7 @@ dictionary is expanded — this is independent of the GRU model itself.
 
 ---
 
-## 🛣️ Possible Next Steps
+## ⭐ Show your support
 
-- Swap in a real labeled resume dataset for production-grade accuracy.
-- Add per-bullet-point classification (strong / weak / passive) as a second
-  GRU head for more granular feedback (see `ats_engine/rule_engine.py` for
-  where the equivalent rule-based version already lives).
-- Add authentication + a database (e.g. PostgreSQL) to save analysis history
-  per user.
-- Deploy the Streamlit app (Streamlit Community Cloud / Docker + a cloud VM).
+Give a ⭐️ if you love ❤️ this!
+
