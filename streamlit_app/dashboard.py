@@ -24,7 +24,7 @@ def render_header():
         unsafe_allow_html=True,
     )
     st.title("🧠 ResumeIQ — AI Resume Analyzer & ATS Score Predictor")
-    st.caption("Bidirectional GRU (TensorFlow/Keras) + Rule-Based ATS Engine — no BERT/LLM APIs.")
+    st.caption("Bidirectional GRU (TensorFlow/Keras) + Rule-Based ATS Engine")
 
 
 def render_gauge(score: float, title: str) -> go.Figure:

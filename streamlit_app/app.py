@@ -55,6 +55,11 @@ def main():
 
     extractor = ResumeTextExtractor()
 
+    # Initialize persistent state -- this is what survives the rerun triggered
+    # by clicking a download button, so results don't disappear.
+    if "analysis_result" not in st.session_state:
+        st.session_state.analysis_result = None
+
     with st.sidebar:
         st.header("1. Upload Resume")
         resume_file = st.file_uploader("Upload PDF or DOCX", type=["pdf", "docx"])
@@ -89,31 +94,39 @@ def main():
 
         analyze_clicked = st.button("🔍 Analyze Resume", type="primary", use_container_width=True)
 
-    if not analyze_clicked:
+    # Only run a NEW analysis when the button is freshly clicked. On any other
+    # rerun (e.g. triggered by clicking a download button below), we skip
+    # straight to rendering whatever is already stored in session_state.
+    if analyze_clicked:
+        if resume_file is None:
+            st.error("Please upload a resume file (PDF or DOCX).")
+            return
+        if not jd_text.strip():
+            st.error("Please provide a job description.")
+            return
+
+        with st.spinner("Extracting resume text ..."):
+            with tempfile.NamedTemporaryFile(delete=False,
+                                              suffix=os.path.splitext(resume_file.name)[1]) as tmp:
+                tmp.write(resume_file.read())
+                tmp_path = tmp.name
+            resume_text = extractor.extract(tmp_path)
+            os.unlink(tmp_path)
+
+        if not resume_text.strip():
+            st.error("Could not extract any text from the uploaded resume. Try a different file.")
+            return
+
+        with st.spinner("Running GRU prediction + ATS analysis ..."):
+            result = pipeline.analyze(resume_text, jd_text)
+
+        st.session_state.analysis_result = result
+
+    result = st.session_state.analysis_result
+
+    if result is None:
         st.info("👈 Upload a resume and provide a job description, then click **Analyze Resume**.")
         return
-
-    if resume_file is None:
-        st.error("Please upload a resume file (PDF or DOCX).")
-        return
-    if not jd_text.strip():
-        st.error("Please provide a job description.")
-        return
-
-    with st.spinner("Extracting resume text ..."):
-        with tempfile.NamedTemporaryFile(delete=False,
-                                          suffix=os.path.splitext(resume_file.name)[1]) as tmp:
-            tmp.write(resume_file.read())
-            tmp_path = tmp.name
-        resume_text = extractor.extract(tmp_path)
-        os.unlink(tmp_path)
-
-    if not resume_text.strip():
-        st.error("Could not extract any text from the uploaded resume. Try a different file.")
-        return
-
-    with st.spinner("Running GRU prediction + ATS analysis ..."):
-        result = pipeline.analyze(resume_text, jd_text)
 
     st.success("Analysis complete!")
 
@@ -133,11 +146,13 @@ def main():
     with col1:
         pdf_bytes = generate_pdf_report(result)
         st.download_button("Download PDF Report", data=pdf_bytes,
-                            file_name="resumeiq_report.pdf", mime="application/pdf")
+                            file_name="resumeiq_report.pdf", mime="application/pdf",
+                            key="download_pdf")
     with col2:
         csv_bytes = generate_csv_report(result)
         st.download_button("Download CSV Report", data=csv_bytes,
-                            file_name="resumeiq_report.csv", mime="text/csv")
+                            file_name="resumeiq_report.csv", mime="text/csv",
+                            key="download_csv")
 
     with st.expander("🔬 Raw analysis JSON (debug)"):
         st.json(result)
