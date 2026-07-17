@@ -13,6 +13,16 @@ from typing import Dict
 
 def render_header():
     st.set_page_config(page_title="ResumeIQ — AI Resume Analyzer", page_icon="🧠", layout="wide")
+    st.markdown(
+        """
+        <style>
+        [data-testid="stSidebar"] {
+            background-color: #0F142B !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
     st.title("🧠 ResumeIQ — AI Resume Analyzer & ATS Score Predictor")
     st.caption("Bidirectional GRU (TensorFlow/Keras) + Rule-Based ATS Engine — no BERT/LLM APIs.")
 
